@@ -12,8 +12,6 @@ spec:
 
   parameters:
     - title: Repository Info
-      required:
-        - name
       properties:
         name:
           title: Repository Name
