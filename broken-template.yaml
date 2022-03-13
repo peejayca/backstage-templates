@@ -2,7 +2,7 @@ apiVersion: scaffolder.backstage.io/v1beta3
 kind: Template
 metadata:
   name: test-template-broken
-  title: Test Pull Request Template
+  title: Test Pull Request Template (Broken)
   description: Create a Pull request
   tags:
     - recommended
