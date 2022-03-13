@@ -26,7 +26,7 @@ spec:
     - name: Fetch Test Repo
       action: fetch:plain
       input:
-        url: https://github.com/peejayca/backstage-test/tree/main/apps/test-app/test-app/
+        url: https://github.com/peejayca/backstage-test/tree/main/apps/test-app/
         targetPath: apps/test-app
 
     - name: Create Delete A File
