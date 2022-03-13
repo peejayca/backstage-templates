@@ -27,13 +27,24 @@ spec:
       action: fetch:plain
       input:
         url: https://github.com/peejayca/backstage-test/tree/main/apps/test-app/
-        targetPath: apps/test-app
+        targetPath: ./apps/test-app
 
-    - name: Create Delete A File
-      action: fs:delete
+    - name: List Workspace
+      action: debug:log
+      input:
+        listWorkspace: true
+
+    - name: Move a file
+      action: fs:rename
       input:
         files:
-          - ./apps/test-app/test-file.txt
+          - from: ./apps/test-app/test-file.txt
+            to: test-file.txt
+
+    - name: List Workspace
+      action: debug:log
+      input:
+        listWorkspace: true
 
     - id: create_pr
       name: Create PR
