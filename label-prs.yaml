@@ -1,0 +1,38 @@
+apiVersion: scaffolder.backstage.io/v1beta3
+kind: Template
+metadata:
+  name: label PR
+  title: label PR
+  description: Add labels to a PR
+  tags:
+    - recommended
+spec:
+  owner: peimanja
+  type: service
+
+  parameters:
+    - title: Repository Info
+      properties:
+        repoUrl:
+          title: Repository Location
+          type: string
+          ui:field: RepoUrlPicker
+          ui:options:
+            allowedHosts:
+              - github.com
+        issueNumber:
+          title: Issue Number
+          type: number
+        labels:
+          title: Labels
+          type: array
+          items:
+            type: string
+
+  steps:
+    - name: Fetch Test Repo
+      action: github:issues:label
+      input:
+        repoUrl: ${{ parameters.repoUrl }}
+        number: ${{ parameters.issueNumber }}
+        labels: ${{ parameters.labels }}
